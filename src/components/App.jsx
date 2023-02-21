@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 
@@ -21,17 +22,17 @@ export class App extends Component {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
+  onLeaveFeedback = () => {
+    this.setState()
+  };
+
   render() {
     return (
       <div>
-        <Section>
-          
+        <Section title="Please leave feedback">
+          <FeedbackOptions options={this.props} onFeedback={this.onLeaveFeedback} />
         </Section>
-        {/* <h2>Please leave feedback</h2>
-        <button type="button">Good</button>
-        <button type="button">Neutral</button>
-        <button type="button">Bad</button>
-        <h2>Statistics</h2> */}
+
         <Section title="Statsics">
           <Statistics
             points={this.state}
