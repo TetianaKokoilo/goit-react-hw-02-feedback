@@ -7,11 +7,11 @@ export class App extends Component {
   static propTypes = {
     //
   };
-
+  
   state = {
     good: 0,
-    neutral: 2,
-    bad: 2,
+    neutral: 0,
+    bad: 0,
   };
 
   countTotalFeedback = () => {
@@ -21,16 +21,19 @@ export class App extends Component {
   countPositiveFeedbackPercentage = () => {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
-
-  onLeaveFeedback = () => {
-    this.setState()
+  
+  onLeaveFeedback = key => {
+    this.setState(prevState => ({
+      [key]:(prevState[key] += 1),
+    }));
   };
 
   render() {
+    const options = Object.keys(this.state);
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions options={this.props} onFeedback={this.onLeaveFeedback} />
+          <FeedbackOptions options={options} onLeaveFeedback={this.onLeaveFeedback} />
         </Section>
 
         <Section title="Statsics">
