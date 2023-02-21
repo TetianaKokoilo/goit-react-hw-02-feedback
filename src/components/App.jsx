@@ -1,21 +1,23 @@
 import { Component } from 'react';
+import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
   static propTypes = {
     //
   };
-  constructor(props) {
-    super(props);
-    this.state = {
+
+    state = {
       good: 0,
-      neutral: 3,
-      bad: 0,
+      neutral: 2,
+      bad: 2,
     };
-  }
 
   countTotalFeedback = () => {
     const totalFeedback = this.state.good + this.state.neutral + this.state.bad;
     return totalFeedback;
+  };
+  countPositiveFeedbackPercentage = () => {
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
@@ -26,11 +28,11 @@ export class App extends Component {
         <button type="button">Neutral</button>
         <button type="button">Bad</button>
         <h2>Statistics</h2>
-        <p>Good: {this.state.good}</p>
-        <p>Neutral: {this.state.neutral}</p>
-        <p>Bad: {this.state.bad}</p>
-        <p>Total:</p>
-        <p>Positive feedback:</p>
+        <Statistics
+          points={this.state}
+          onTotalCount={this.countTotalFeedback}
+          onPositivePercentage={this.countPositiveFeedbackPercentage}
+        />
       </div>
     );
   }
