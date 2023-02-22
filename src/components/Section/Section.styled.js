@@ -7,5 +7,4 @@ export const StyledTitle = styled.h2`
   color: #333333;
   line-height: 45px;
   opacity: 0.8;
-
 `

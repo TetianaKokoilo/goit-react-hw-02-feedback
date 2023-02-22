@@ -24,13 +24,4 @@ background: linear-gradient(321.69deg, #ff6a64 0%, #ffb199 100%);
     color: #333333;
     transition: 1.4s;
   }
-  /* &:first-child {
-
-  }
-  &:nth-child(2) {
-
-  }
-  &:last-child {
-
-  } */
 `;
