@@ -5,6 +5,7 @@ import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 
 import PropTypes from 'prop-types';
+import { StyledContainer } from './App.styled'
 export class App extends Component {
   static propTypes = {
     title: PropTypes.string
@@ -33,14 +34,14 @@ export class App extends Component {
   render() {
     const options = Object.keys(this.state);
     return (
-      <div>
+      <StyledContainer>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
-        <Section title="Statsics">
+        <Section title="Statsics" >
           {this.countTotalFeedback() > 0 ? (
             <Statistics
               points={this.state}
@@ -51,7 +52,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </div>
+      </StyledContainer>
     );
   }
 }

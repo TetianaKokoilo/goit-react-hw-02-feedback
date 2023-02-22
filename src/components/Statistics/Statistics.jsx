@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { StyledStatistics, StyledStatisticsText, StyledStatisticsResult, StyledStatisticsTotal } from './Statistics.styled';
 
 export const Statistics = ({
   onTotalCount,
@@ -7,14 +8,24 @@ export const Statistics = ({
 }) => {
   return (
     <div>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>bad: {bad}</p>
-      <p>Total: {onTotalCount()}</p>
-      <p>
-        Positive feedback:
-        {onPositivePercentage() ? onPositivePercentage() : '0'}%
-      </p>
+      <StyledStatistics>
+        <StyledStatisticsText>
+          Good: <StyledStatisticsResult>{good}</StyledStatisticsResult>
+        </StyledStatisticsText>
+        <StyledStatisticsText>
+          Neutral: <StyledStatisticsResult>{neutral}</StyledStatisticsResult>
+        </StyledStatisticsText>
+        <StyledStatisticsText>
+          bad: <StyledStatisticsResult>{bad}</StyledStatisticsResult>
+        </StyledStatisticsText>
+      </StyledStatistics>
+      <StyledStatisticsTotal>
+        Total: <StyledStatisticsResult>{onTotalCount()}</StyledStatisticsResult>
+      </StyledStatisticsTotal>
+      <StyledStatisticsTotal>
+        Positive feedback:{' '}
+        <StyledStatisticsResult>{onPositivePercentage() ? onPositivePercentage() : '0'}%</StyledStatisticsResult>
+      </StyledStatisticsTotal>
     </div>
   );
 };
@@ -24,5 +35,5 @@ Statistics.propTypes = {
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
     bad: PropTypes.number.isRequired,
-  })
-}
+  }),
+};
