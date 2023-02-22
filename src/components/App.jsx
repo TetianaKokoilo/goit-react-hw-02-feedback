@@ -4,6 +4,9 @@ import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 
+import PropTypes from 'prop-types';
+
+
 export class App extends Component {
   static propTypes = {
     //
@@ -53,4 +56,8 @@ export class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  title: PropTypes.string
 }

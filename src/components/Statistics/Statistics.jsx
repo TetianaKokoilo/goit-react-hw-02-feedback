@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Statistics = ({
   onTotalCount,
   onPositivePercentage,
@@ -16,3 +18,11 @@ export const Statistics = ({
     </div>
   );
 };
+
+Statistics.propTypes = {
+  points: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  })
+}
