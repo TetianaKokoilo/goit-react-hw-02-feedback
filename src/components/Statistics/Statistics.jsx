@@ -16,7 +16,7 @@ export const Statistics = ({
           Neutral: <StyledStatisticsResult>{neutral}</StyledStatisticsResult>
         </StyledStatisticsText>
         <StyledStatisticsText>
-          bad: <StyledStatisticsResult>{bad}</StyledStatisticsResult>
+          Bad: <StyledStatisticsResult>{bad}</StyledStatisticsResult>
         </StyledStatisticsText>
       </StyledStatistics>
       <StyledStatisticsTotal>
