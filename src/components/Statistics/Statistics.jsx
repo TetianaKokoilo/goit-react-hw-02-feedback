@@ -23,7 +23,7 @@ export const Statistics = ({
         Total: <StyledStatisticsResult>{onTotalCount()}</StyledStatisticsResult>
       </StyledStatisticsTotal>
       <StyledStatisticsTotal>
-        Positive feedback:{' '}
+        Positive feedback:
         <StyledStatisticsResult>{onPositivePercentage() ? onPositivePercentage() : '0'}%</StyledStatisticsResult>
       </StyledStatisticsTotal>
     </div>
