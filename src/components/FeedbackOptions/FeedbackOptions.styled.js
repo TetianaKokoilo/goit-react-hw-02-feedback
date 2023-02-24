@@ -18,6 +18,7 @@ background: linear-gradient(321.69deg, #ff6a64 0%, #ffb199 100%);
   color: #ffffff;
   width: 100px;
   height: 40px;
+  cursor: pointer;
   &:hover,
   &:focus {
     background: rgba(255, 106, 100, 0.1);
